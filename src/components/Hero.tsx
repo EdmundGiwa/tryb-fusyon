@@ -8,8 +8,20 @@ import { motion, AnimatePresence } from "framer-motion";
 ───────────────────────────────────────────── */
 const slides = [
   {
-    video: "/videos/blue-adire.mp4",
+    video: "/videos/green-dress-lady.mp4",
     index: "01",
+    tag: "Womenswear",
+    title: ["Emerald", "Grace"],
+    quote: "She does not enter a room — she transforms it.",
+    description:
+      "An ode to feminine power and natural brilliance. The Emerald Grace moves like water — fluid, magnetic, impossible to ignore. Cut from a single bolt of hand-loomed silk-cotton blend.",
+    detail: "Silk-Cotton Blend · Hand-beaded Neckline",
+    rgb: "6, 78, 59",
+    bg: "#010f08",
+  },
+  {
+    video: "/videos/blue-adire.mp4",
+    index: "02",
     tag: "Heritage Edition",
     title: ["The Indigo", "Royale"],
     quote: "Where heritage breathes in every thread.",
@@ -20,8 +32,20 @@ const slides = [
     bg: "#010c22",
   },
   {
+    video: "/videos/brown-male.mp4",
+    index: "03",
+    tag: "Utility Series",
+    title: ["Adire", "Cargo Set"],
+    quote: "Rooted in heritage, engineered for motion.",
+    description:
+      "A masterclass in functional elegance. Featuring hand-dyed Earth Adire motifs across a relaxed utility silhouette. Engineered with premium cotton and finished with matte black hardware for the modern journey.",
+    detail: "Earth Adire · Relaxed Utility Fit",
+    rgb: "158, 107, 82",
+    bg: "#100906",
+  },
+  {
     video: "/videos/blue-long-adire.mp4",
-    index: "02",
+    index: "04",
     tag: "Atelier Reserve",
     title: ["Azure", "Sweep"],
     quote: "Length is authority. Elegance is earned.",
@@ -33,7 +57,7 @@ const slides = [
   },
   {
     video: "/videos/brown-adire.mp4",
-    index: "03",
+    index: "05",
     tag: "Earth Series",
     title: ["Earthly", "Elegance"],
     quote: "Rooted in the soil. Rising in glory.",
@@ -44,20 +68,8 @@ const slides = [
     bg: "#150800",
   },
   {
-    video: "/videos/green-dress-lady.mp4",
-    index: "04",
-    tag: "Womenswear",
-    title: ["Emerald", "Grace"],
-    quote: "She does not enter a room — she transforms it.",
-    description:
-      "An ode to feminine power and natural brilliance. The Emerald Grace moves like water — fluid, magnetic, impossible to ignore. Cut from a single bolt of hand-loomed silk-cotton blend.",
-    detail: "Silk-Cotton Blend · Hand-beaded Neckline",
-    rgb: "6, 78, 59",
-    bg: "#010f08",
-  },
-  {
     video: "/videos/green-jacket.mp4",
-    index: "05",
+    index: "06",
     tag: "Power Dressing",
     title: ["Forest", "Authority"],
     quote: "Structure is a statement. Wear it well.",
@@ -69,7 +81,7 @@ const slides = [
   },
   {
     video: "/videos/technical-flats.mp4",
-    index: "06",
+    index: "07",
     tag: "Studio Series",
     title: ["Architectural", "Precision"],
     quote: "Before the stitch — the vision.",
@@ -184,8 +196,8 @@ function VideoLayer({
         muted
         playsInline
         onEnded={onEnded}
-        className="absolute inset-0 h-full w-full object-cover object-center"
-        style={{ transform: "scale(0.94)", transformOrigin: "center center" }}
+        className="absolute inset-0 h-full w-full object-cover object-center rounded-[2rem] shadow-[0_20px_100px_rgba(0,0,0,0.8)] border border-white/10"
+        style={{ transform: "scale(0.82)", transformOrigin: "center center" }}
       >
         <source src={slide.video} type="video/mp4" />
       </video>
@@ -280,93 +292,8 @@ export default function Hero() {
           })}
         </div>
 
-        {/* ─── OVERLAYS ─── */}
-        {/* Top for nav */}
-        <div
-          className="absolute inset-x-0 top-0 z-[2] pointer-events-none"
-          style={{ height: "20%", background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%)" }}
-        />
-        {/* Bottom gradient — readable text area */}
-        <div
-          className="absolute inset-x-0 bottom-0 z-[2] pointer-events-none"
-          style={{
-            height: "65%",
-            background:
-              "linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 28%, rgba(0,0,0,0.3) 55%, transparent 100%)",
-          }}
-        />
-        {/* Left edge */}
-        <div
-          className="absolute inset-y-0 left-0 z-[2] pointer-events-none"
-          style={{ width: "40%", background: "linear-gradient(to right, rgba(0,0,0,0.22) 0%, transparent 100%)" }}
-        />
 
-        {/* ═══════════════════════════════════════
-            NAVBAR — glassmorphic floating bar
-        ═══════════════════════════════════════ */}
-        <motion.header
-          className="absolute inset-x-0 top-0 z-50 px-5 md:px-10 lg:px-14 flex items-center justify-between"
-          style={{ height: 90 }}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        >
-          {/* Logo */}
-          <a href="/" className="group flex flex-col leading-none z-10">
-            <span className="font-serif text-[1.1rem] md:text-[1.3rem] tracking-[0.32em] font-bold text-white transition-opacity duration-500">
-              TRYB FUSYON
-            </span>
-            <span className="text-[0.4rem] uppercase tracking-[0.55em] text-white/30 mt-0.5 font-sans">
-              Heritage Couture · Lagos
-            </span>
-          </a>
 
-          {/* Glassmorphic center nav pill */}
-          <nav
-            className="hidden md:flex items-center gap-1 rounded-full px-2 py-2"
-            style={{
-              background: "rgba(255,255,255,0.06)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              backdropFilter: "blur(28px) saturate(160%)",
-              WebkitBackdropFilter: "blur(28px) saturate(160%)",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08)",
-            }}
-          >
-            {["Collections", "About", "Services", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="relative px-4 py-1.5 text-[0.58rem] uppercase tracking-[0.18em] text-white/50 hover:text-white/90 transition-colors duration-400 rounded-full hover:bg-white/5 font-sans"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-
-          {/* Order CTA — gradient border pill */}
-          <a href="#contact" className="z-10 group">
-            <motion.span
-              className="relative inline-flex items-center gap-2 rounded-full px-5 md:px-6 py-2.5 md:py-3 text-[0.58rem] md:text-[0.6rem] font-sans font-medium tracking-[0.22em] uppercase text-white overflow-hidden"
-              style={{
-                background: `linear-gradient(135deg, rgba(${s?.rgb ?? "255,255,255"},0.55) 0%, rgba(${s?.rgb ?? "255,255,255"},0.2) 100%)`,
-                border: `1px solid rgba(${s?.rgb ?? "255,255,255"},0.4)`,
-                backdropFilter: "blur(20px) saturate(180%)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%)",
-                boxShadow: `0 0 28px -6px rgba(${s?.rgb ?? "255,255,255"},0.35), inset 0 1px 0 rgba(255,255,255,0.15)`,
-                transition: "box-shadow 0.6s ease, background 0.6s ease, border-color 0.6s ease",
-              }}
-              whileHover={{ scale: 1.04, filter: "brightness(1.12)" }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.18 }}
-            >
-              <span className="hidden md:inline">Order Bespoke</span>
-              <span className="md:hidden">Order</span>
-              <svg className="w-2.5 h-2.5 opacity-60" viewBox="0 0 10 10" fill="none">
-                <path d="M1 5h8M6 2l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </motion.span>
-          </a>
-        </motion.header>
 
         {/* ═══════════════════════════════════════
             BOTTOM CONTENT PANEL
@@ -525,41 +452,51 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* ─── BOTTOM RIGHT: next pill ─── */}
+        {/* ─── BOTTOM RIGHT: next preview card ─── */}
         <motion.div
-          className="absolute bottom-4 right-14 md:right-16 z-30 hidden md:block"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="absolute bottom-6 right-6 md:right-10 z-30 hidden md:block"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 1 }}
         >
           <motion.button
             onClick={() => go()}
-            className="flex items-center gap-3 rounded-full px-4 py-2.5"
-            style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.09)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-            }}
-            whileHover={{ scale: 1.04, background: "rgba(255,255,255,0.09)" }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.16 }}
+            className="group relative flex items-center justify-center overflow-hidden rounded-xl cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+            style={{ width: 150, height: 85 }}
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className="flex flex-col items-start gap-0.5">
-              <span className="text-[0.38rem] uppercase tracking-[0.38em] text-white/25 font-sans">Up next</span>
-              <span className="text-[0.54rem] tracking-[0.1em] text-white/55 font-sans font-medium">
-                {nextSlide?.title?.join(" ")}
-              </span>
-            </div>
-            <motion.svg
-              className="w-3 h-3 text-white/30"
-              viewBox="0 0 12 12"
-              fill="none"
-              animate={{ x: [0, 3, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            {/* Next Video Preview */}
+            <video
+              key={nextSlide.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100"
             >
-              <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
-            </motion.svg>
+              <source src={nextSlide.video} type="video/mp4" />
+            </video>
+
+            {/* Gradient Overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none transition-opacity duration-500 group-hover:opacity-70" />
+            
+            {/* Frosted Inner Border */}
+            <div className="absolute inset-0 border border-white/10 rounded-xl pointer-events-none group-hover:border-white/30 transition-colors duration-500" />
+            
+            {/* Text Overlay */}
+            <div className="absolute bottom-3 left-4 flex flex-col items-start pointer-events-none drop-shadow-lg z-10">
+               <span className="text-[0.4rem] uppercase tracking-[0.3em] text-white/70 font-sans mb-0.5">Up next</span>
+               <span className="text-[0.55rem] text-white font-medium tracking-wide">{nextSlide?.title?.join(" ")}</span>
+            </div>
+
+            {/* Glowing Dot Indicator (like screenshot) */}
+            <motion.div
+              className="absolute bottom-3.5 right-3.5 w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)]"
+              animate={{ opacity: [1, 0.4, 1], scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
           </motion.button>
         </motion.div>
 
