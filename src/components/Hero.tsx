@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import CollectionModal, { CollectionItem } from "./CollectionModal";
 
 /* ─────────────────────────────────────────────
    SLIDE DATA
@@ -116,12 +117,12 @@ function Grain() {
 ───────────────────────────────────────────── */
 function HeroTitle({ lines, show }: { lines: string[]; show: boolean }) {
   return (
-    <div className="mb-5 md:mb-6">
+    <div className="mb-4 md:mb-6">
       {lines.map((line, i) => (
         <div key={i} className="overflow-hidden" style={{ lineHeight: 0.88 }}>
           <motion.h1
             className="block font-serif font-extralight text-white tracking-[-0.025em] pb-[0.07em]"
-            style={{ fontSize: "clamp(3.2rem, 7.8vw, 10rem)" }}
+            style={{ fontSize: "clamp(2.5rem, 12vw, 10rem)" }}
             initial={{ y: "112%", opacity: 0 }}
             animate={
               show
@@ -225,12 +226,13 @@ export default function Hero() {
   const [exiting, setExiting] = useState<number | null>(null);
   const [busy, setBusy] = useState(false);
   const [textOn, setTextOn] = useState(true);
+  const [preorderModalOpen, setPreorderModalOpen] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const go = useCallback(
-    (to?: number) => {
+    (to?: number | any) => {
       if (busy) return;
-      const next = to !== undefined ? to : (cur + 1) % slides.length;
+      const next = typeof to === "number" ? to : (cur + 1) % slides.length;
       if (next === cur) return;
 
       if (timerRef.current) clearTimeout(timerRef.current);
@@ -252,11 +254,13 @@ export default function Hero() {
 
   useEffect(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => go(), FALLBACK_MS);
+    if (!preorderModalOpen) {
+      timerRef.current = setTimeout(() => go(), FALLBACK_MS);
+    }
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [cur, go]);
+  }, [cur, go, preorderModalOpen]);
 
   const s = slides[cur];
   const nextSlide = slides[(cur + 1) % slides.length];
@@ -376,33 +380,33 @@ export default function Hero() {
                 exit={{ opacity: 0, y: 12, filter: "blur(8px)", transition: { duration: 0.3 } }}
               >
                 {/* Top section: quote + description */}
-                <div className="px-6 md:px-8 pt-5 md:pt-6 pb-4 md:pb-5">
-                  {/* Quote */}
-                  <p className="font-serif italic text-white/90 text-[0.9rem] md:text-[1rem] lg:text-[1.05rem] font-light leading-relaxed mb-3">
+                <div className="px-5 md:px-8 pt-4 md:pt-6 pb-3 md:pb-5">
+                  {/* Quote - Hidden on mobile for a cleaner look */}
+                  <p className="hidden md:block font-serif italic text-white/90 text-[1rem] lg:text-[1.05rem] font-light leading-relaxed mb-3">
                     &ldquo;{s?.quote}&rdquo;
                   </p>
 
-                  {/* Accent divider */}
+                  {/* Accent divider - Hidden on mobile */}
                   <div
-                    className="mb-4 h-px"
+                    className="hidden md:block mb-4 h-px"
                     style={{
                       background: `linear-gradient(to right, rgba(${s?.rgb ?? "255,255,255"}, 0.5), rgba(255,255,255,0.07) 40%, transparent)`,
                     }}
                   />
 
-                  {/* Description — full readable text */}
-                  <p className="text-[0.8rem] md:text-[0.88rem] text-white/90 font-sans font-light leading-[1.85] max-w-lg">
+                  {/* Description — smaller and clamped on mobile */}
+                  <p className="text-[0.68rem] md:text-[0.88rem] text-white/85 md:text-white/90 font-sans font-light leading-[1.6] md:leading-[1.85] max-w-lg line-clamp-3 md:line-clamp-none">
                     {s?.description}
                   </p>
                 </div>
 
                 {/* Bottom section: detail + CTAs */}
                 <div
-                  className="px-6 md:px-8 py-4 md:py-5 flex flex-wrap items-center justify-between gap-4"
+                  className="px-5 md:px-8 py-3 md:py-5 flex flex-wrap items-center justify-between gap-4"
                   style={{ borderTop: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)" }}
                 >
                   {/* Detail spec */}
-                  <p className="text-[0.52rem] uppercase tracking-[0.28em] text-white/90 font-sans">
+                  <p className="text-[0.45rem] md:text-[0.52rem] uppercase tracking-[0.28em] text-white/80 md:text-white/90 font-sans line-clamp-1">
                     {s?.detail}
                   </p>
 
@@ -410,13 +414,16 @@ export default function Hero() {
                   <div className="flex items-center gap-3 flex-wrap">
 
 
-                    {/* Text link */}
-                    <a
-                      href="#about"
-                      className="text-[0.54rem] tracking-[0.22em] uppercase text-white/90 hover:text-white/90 transition-colors duration-400 border-b border-white/12 pb-px hover:border-white/35"
+                    {/* Preorder Button */}
+                    <button
+                      onClick={() => setPreorderModalOpen(true)}
+                      className="text-[0.54rem] tracking-[0.22em] uppercase text-white/90 hover:text-white/90 transition-colors duration-400 border-b border-white/12 pb-px hover:border-white/35 flex items-center gap-1.5 cursor-pointer"
                     >
-                      Our Story
-                    </a>
+                      Preorder
+                      <svg className="w-2.5 h-2.5 opacity-70" viewBox="0 0 10 10" fill="none">
+                        <path d="M1 5h8M6 2l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </motion.div>
@@ -541,6 +548,24 @@ export default function Hero() {
             {s?.title?.join(" ")} · Tryb Fusyon
           </span>
         </motion.div>
+        
+        {/* ── Modal overlay for current hero slide ── */}
+        <AnimatePresence>
+          {preorderModalOpen && s && (
+            <CollectionModal 
+              item={{
+                tag: s.tag,
+                name: s.title.join(" "),
+                video: s.video,
+                desc: s.description,
+                detail: s.detail,
+                index: s.index,
+                accent: s.rgb,
+              }} 
+              onClose={() => setPreorderModalOpen(false)} 
+            />
+          )}
+        </AnimatePresence>
       </section>
     </>
   );
