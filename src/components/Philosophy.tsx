@@ -62,7 +62,7 @@ export default function Philosophy() {
               border: "1px solid rgba(255,255,255,0.07)",
             }}
           >
-            <p className="text-[0.42rem] uppercase tracking-[0.35em] text-white/40 mb-1">Est.</p>
+            <p className="text-[0.42rem] uppercase tracking-[0.35em] text-white/90 mb-1">Est.</p>
             <p className="font-serif text-xl text-white font-light">Lagos, Nigeria</p>
           </div>
         </motion.div>
@@ -71,7 +71,7 @@ export default function Philosophy() {
         <motion.div style={{ x: rightX, opacity }} className="flex flex-col gap-8">
           <div className="flex items-center gap-4">
             <div className="w-10 h-px bg-white/25" />
-            <span className="text-[0.5rem] uppercase tracking-[0.42em] text-white/40 font-sans">
+            <span className="text-[0.5rem] uppercase tracking-[0.42em] text-white/90 font-sans">
               The Philosophy
             </span>
           </div>
@@ -81,15 +81,15 @@ export default function Philosophy() {
             style={{ fontSize: "clamp(2.2rem, 5vw, 5rem)" }}
           >
             Where heritage <br />
-            <em className="italic font-light text-white/35">breathes in</em> <br />
+            <em className="italic font-light text-white/90">breathes in</em> <br />
             every thread.
           </h2>
 
           <div className="space-y-5 max-w-[480px]">
-            <p className="text-[0.88rem] md:text-[0.95rem] text-white/55 font-sans font-light leading-[1.85]">
+            <p className="text-[0.88rem] md:text-[0.95rem] text-white/90 font-sans font-light leading-[1.85]">
               Founded in the heart of Lagos, Tryb Fusyon is more than a couture house — it is a reclamation of West African narrative. True luxury is not manufactured; it is cultivated over generations, spoken through the hands of artisans.
             </p>
-            <p className="text-[0.88rem] md:text-[0.95rem] text-white/55 font-sans font-light leading-[1.85]">
+            <p className="text-[0.88rem] md:text-[0.95rem] text-white/90 font-sans font-light leading-[1.85]">
               Each garment is an intimate dialogue between centuries-old Adire craftsmanship and modern architectural precision.
             </p>
           </div>
@@ -99,13 +99,13 @@ export default function Philosophy() {
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col gap-1.5">
                 <span className="font-serif text-2xl md:text-3xl text-white font-extralight">{s.value}</span>
-                <span className="text-[0.48rem] uppercase tracking-[0.3em] text-white/35 font-sans">{s.label}</span>
+                <span className="text-[0.48rem] uppercase tracking-[0.3em] text-white/90 font-sans">{s.label}</span>
               </div>
             ))}
           </div>
 
           <a href="#craftsmanship" className="inline-flex items-center gap-4 group w-fit mt-2">
-            <span className="text-[0.58rem] uppercase tracking-[0.28em] text-white/70 group-hover:text-white transition-colors duration-300">
+            <span className="text-[0.58rem] uppercase tracking-[0.28em] text-white/90 group-hover:text-white transition-colors duration-300">
               Discover the Craft
             </span>
             <div className="w-8 h-px bg-white/30 group-hover:w-14 group-hover:bg-white transition-all duration-500" />

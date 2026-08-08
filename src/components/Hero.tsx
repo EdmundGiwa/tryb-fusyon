@@ -166,6 +166,7 @@ function VideoLayer({
   onEnded: () => void;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const v = ref.current;
@@ -191,13 +192,24 @@ function VideoLayer({
           : { opacity: 0, scale: 1.07 }
       }
     >
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center z-10" style={{ transform: "scale(0.82)" }}>
+          <motion.div
+            className="w-12 h-12 border border-white/20 border-t-white/80 rounded-full"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+          />
+        </div>
+      )}
       <video
         ref={ref}
         muted
         playsInline
+        preload={isActive ? "auto" : "metadata"}
+        onLoadedData={() => setIsLoaded(true)}
         onEnded={onEnded}
-        className="absolute inset-0 h-full w-full object-cover object-center rounded-[2rem] shadow-[0_20px_100px_rgba(0,0,0,0.8)] border border-white/10"
-        style={{ transform: "scale(0.82)", transformOrigin: "center center" }}
+        className="absolute inset-0 h-full w-full object-cover object-center rounded-[2rem] shadow-[0_20px_100px_rgba(0,0,0,0.8)] border border-white/10 transition-opacity duration-1000"
+        style={{ transform: "scale(0.82)", transformOrigin: "center center", opacity: isLoaded ? 1 : 0 }}
       >
         <source src={slide.video} type="video/mp4" />
       </video>
@@ -332,7 +344,7 @@ export default function Hero() {
 
                 <div className="w-6 h-px bg-white/15" />
 
-                <span className="font-mono text-[0.45rem] text-white/28 tracking-[0.3em]">
+                <span className="font-mono text-[0.45rem] text-white/90 tracking-[0.3em]">
                   {s?.index} / 0{slides.length}
                 </span>
               </motion.div>
@@ -366,7 +378,7 @@ export default function Hero() {
                 {/* Top section: quote + description */}
                 <div className="px-6 md:px-8 pt-5 md:pt-6 pb-4 md:pb-5">
                   {/* Quote */}
-                  <p className="font-serif italic text-white/55 text-[0.9rem] md:text-[1rem] lg:text-[1.05rem] font-light leading-relaxed mb-3">
+                  <p className="font-serif italic text-white/90 text-[0.9rem] md:text-[1rem] lg:text-[1.05rem] font-light leading-relaxed mb-3">
                     &ldquo;{s?.quote}&rdquo;
                   </p>
 
@@ -379,7 +391,7 @@ export default function Hero() {
                   />
 
                   {/* Description — full readable text */}
-                  <p className="text-[0.8rem] md:text-[0.88rem] text-white/72 font-sans font-light leading-[1.85] max-w-lg">
+                  <p className="text-[0.8rem] md:text-[0.88rem] text-white/90 font-sans font-light leading-[1.85] max-w-lg">
                     {s?.description}
                   </p>
                 </div>
@@ -390,7 +402,7 @@ export default function Hero() {
                   style={{ borderTop: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)" }}
                 >
                   {/* Detail spec */}
-                  <p className="text-[0.52rem] uppercase tracking-[0.28em] text-white/35 font-sans">
+                  <p className="text-[0.52rem] uppercase tracking-[0.28em] text-white/90 font-sans">
                     {s?.detail}
                   </p>
 
@@ -401,7 +413,7 @@ export default function Hero() {
                     {/* Text link */}
                     <a
                       href="#about"
-                      className="text-[0.54rem] tracking-[0.22em] uppercase text-white/32 hover:text-white/65 transition-colors duration-400 border-b border-white/12 pb-px hover:border-white/35"
+                      className="text-[0.54rem] tracking-[0.22em] uppercase text-white/90 hover:text-white/90 transition-colors duration-400 border-b border-white/12 pb-px hover:border-white/35"
                     >
                       Our Story
                     </a>
@@ -487,7 +499,7 @@ export default function Hero() {
             
             {/* Text Overlay */}
             <div className="absolute bottom-3 left-4 flex flex-col items-start pointer-events-none drop-shadow-lg z-10">
-               <span className="text-[0.4rem] uppercase tracking-[0.3em] text-white/70 font-sans mb-0.5">Up next</span>
+               <span className="text-[0.4rem] uppercase tracking-[0.3em] text-white/90 font-sans mb-0.5">Up next</span>
                <span className="text-[0.55rem] text-white font-medium tracking-wide">{nextSlide?.title?.join(" ")}</span>
             </div>
 

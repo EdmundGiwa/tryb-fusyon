@@ -44,7 +44,7 @@ export default function Navbar() {
         <span className="font-serif text-[1.1rem] md:text-[1.3rem] tracking-[0.32em] font-bold text-white transition-opacity duration-500">
           TRYB FUSYON
         </span>
-        <span className="text-[0.4rem] uppercase tracking-[0.55em] text-white/30 mt-0.5 font-sans">
+        <span className="text-[0.4rem] uppercase tracking-[0.55em] text-white/90 mt-0.5 font-sans">
           Heritage Couture · Lagos
         </span>
       </a>
@@ -60,11 +60,11 @@ export default function Navbar() {
           boxShadow: "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08)",
         }}
       >
-        {["Philosophy", "Collections", "Craftsmanship", "Bespoke"].map((item) => (
+        {["Philosophy", "Collections", "Craftsmanship", "Gallery", "Bespoke"].map((item) => (
           <a
             key={item}
-            href={`#${item.toLowerCase()}`}
-            className="relative px-4 py-1.5 text-[0.58rem] uppercase tracking-[0.18em] text-white/50 hover:text-white/90 transition-colors duration-400 rounded-full hover:bg-white/5 font-sans"
+            href={item === "Gallery" ? "/gallery" : `/#${item.toLowerCase()}`}
+            className="relative px-4 py-1.5 text-[0.58rem] uppercase tracking-[0.18em] text-white/90 hover:text-white/90 transition-colors duration-400 rounded-full hover:bg-white/5 font-sans"
           >
             {item}
           </a>

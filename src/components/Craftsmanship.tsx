@@ -35,7 +35,7 @@ export default function Craftsmanship() {
             className="flex items-center gap-4"
           >
             <div className="w-10 h-px bg-white/20" />
-            <span className="text-[0.55rem] uppercase tracking-[0.4em] text-white/50 font-sans">
+            <span className="text-[0.55rem] uppercase tracking-[0.4em] text-white/90 font-sans">
               The Atelier
             </span>
             <div className="w-10 h-px bg-white/20" />
@@ -48,7 +48,7 @@ export default function Craftsmanship() {
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="font-serif font-extralight text-4xl md:text-6xl lg:text-7xl tracking-[-0.02em]"
           >
-            Artisanal <span className="italic text-white/40">Precision</span>
+            Artisanal <span className="italic text-white/90">Precision</span>
           </motion.h2>
           
           <motion.p 
@@ -56,7 +56,7 @@ export default function Craftsmanship() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-xl text-[0.95rem] md:text-[1.05rem] text-white/50 font-sans font-light leading-[1.8]"
+            className="max-w-xl text-[0.95rem] md:text-[1.05rem] text-white/90 font-sans font-light leading-[1.8]"
           >
             Every garment is a study in uncompromising quality. From the hand-drawn technical flats to the final resist-dye bath in Lagos, our process honors both structure and spirit.
           </motion.p>
@@ -76,11 +76,11 @@ export default function Craftsmanship() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#020202] via-[#020202]/30 to-transparent transition-opacity duration-700" />
             <div className="absolute inset-8 md:inset-12 flex flex-col justify-end items-start">
-              <span className="px-4 py-1.5 rounded-full border border-white/20 bg-black/30 backdrop-blur-md text-[0.45rem] uppercase tracking-[0.3em] text-white/70 mb-5">
+              <span className="px-4 py-1.5 rounded-full border border-white/20 bg-black/30 backdrop-blur-md text-[0.45rem] uppercase tracking-[0.3em] text-white/90 mb-5">
                 01 / The Blueprint
               </span>
               <h3 className="font-serif font-light text-3xl md:text-5xl text-white mb-4">Architectural <br/> Precision.</h3>
-              <p className="text-[0.85rem] text-white/50 font-sans font-light max-w-sm leading-relaxed">
+              <p className="text-[0.85rem] text-white/90 font-sans font-light max-w-sm leading-relaxed">
                 Before the stitch comes the vision. Hand-drafted technical flats guide our tailoring, ensuring utility, balance, and flawless draping.
               </p>
             </div>
@@ -97,7 +97,7 @@ export default function Craftsmanship() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#020202]/90 via-[#020202]/20 to-transparent" />
             <div className="absolute inset-8 flex flex-col justify-end items-start">
-              <span className="px-3 py-1 rounded-full border border-white/10 bg-black/20 backdrop-blur-md text-[0.45rem] uppercase tracking-[0.3em] text-white/60 mb-4">
+              <span className="px-3 py-1 rounded-full border border-white/10 bg-black/20 backdrop-blur-md text-[0.45rem] uppercase tracking-[0.3em] text-white/90 mb-4">
                 02 / Structure
               </span>
               <h3 className="font-serif font-light text-2xl md:text-3xl text-white mb-2">Full Canvas Construction</h3>
@@ -116,11 +116,11 @@ export default function Craftsmanship() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#020202] via-[#020202]/50 to-transparent" />
             <div className="absolute inset-8 flex flex-col justify-end items-start">
-              <span className="px-3 py-1 rounded-full border border-white/10 bg-black/20 backdrop-blur-md text-[0.45rem] uppercase tracking-[0.3em] text-white/60 mb-4">
+              <span className="px-3 py-1 rounded-full border border-white/10 bg-black/20 backdrop-blur-md text-[0.45rem] uppercase tracking-[0.3em] text-white/90 mb-4">
                 03 / The Craft
               </span>
               <h3 className="font-serif font-light text-2xl md:text-3xl text-white mb-2">Heritage Indigo</h3>
-              <p className="text-[0.75rem] text-white/50 font-sans font-light leading-relaxed line-clamp-2 mt-1">
+              <p className="text-[0.75rem] text-white/90 font-sans font-light leading-relaxed line-clamp-2 mt-1">
                 Hand-drawn with cassava paste and submerged in organic indigo baths in Nigeria.
               </p>
             </div>

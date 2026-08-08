@@ -25,11 +25,11 @@ export default function Footer() {
             <span className="font-serif text-[1.4rem] tracking-[0.32em] font-bold text-white transition-opacity duration-500">
               TRYB FUSYON
             </span>
-            <span className="text-[0.45rem] uppercase tracking-[0.55em] text-white/30 mt-2 font-sans">
+            <span className="text-[0.45rem] uppercase tracking-[0.55em] text-white/90 mt-2 font-sans">
               Heritage Couture · Lagos
             </span>
           </a>
-          <p className="text-[0.8rem] text-white/40 font-sans font-light max-w-xs mt-2 leading-[1.8]">
+          <p className="text-[0.8rem] text-white/90 font-sans font-light max-w-xs mt-2 leading-[1.8]">
             Bridging centuries of Adire craftsmanship with modern architectural tailoring. Designed and handcrafted in Lagos, Nigeria.
           </p>
         </motion.div>
@@ -42,9 +42,9 @@ export default function Footer() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-1 flex flex-col gap-5"
         >
-          <span className="text-[0.55rem] uppercase tracking-[0.3em] text-white/30 mb-2">Explore</span>
+          <span className="text-[0.55rem] uppercase tracking-[0.3em] text-white/90 mb-2">Explore</span>
           {["Philosophy", "Collections", "Craftsmanship", "Atelier"].map((link) => (
-            <a key={link} href={`#${link.toLowerCase()}`} className="text-[0.85rem] text-white/60 hover:text-white transition-colors w-fit group flex items-center gap-3">
+            <a key={link} href={`#${link.toLowerCase()}`} className="text-[0.85rem] text-white/90 hover:text-white transition-colors w-fit group flex items-center gap-3">
               <span className="w-0 h-[1px] bg-white/40 transition-all duration-300 group-hover:w-4" />
               {link}
             </a>
@@ -59,9 +59,9 @@ export default function Footer() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-1 flex flex-col gap-5"
         >
-          <span className="text-[0.55rem] uppercase tracking-[0.3em] text-white/30 mb-2">Legal</span>
+          <span className="text-[0.55rem] uppercase tracking-[0.3em] text-white/90 mb-2">Legal</span>
           {["Privacy Policy", "Terms of Service", "Shipping & Returns", "Care Guide"].map((link) => (
-            <a key={link} href="#" className="text-[0.85rem] text-white/60 hover:text-white transition-colors w-fit group flex items-center gap-3">
+            <a key={link} href="#" className="text-[0.85rem] text-white/90 hover:text-white transition-colors w-fit group flex items-center gap-3">
               <span className="w-0 h-[1px] bg-white/40 transition-all duration-300 group-hover:w-4" />
               {link}
             </a>
@@ -76,8 +76,8 @@ export default function Footer() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-1 flex flex-col gap-5"
         >
-          <span className="text-[0.55rem] uppercase tracking-[0.3em] text-white/30 mb-2">The List</span>
-          <p className="text-[0.8rem] text-white/40 font-sans font-light leading-[1.8]">
+          <span className="text-[0.55rem] uppercase tracking-[0.3em] text-white/90 mb-2">The List</span>
+          <p className="text-[0.8rem] text-white/90 font-sans font-light leading-[1.8]">
             Subscribe to receive invitations to private views and exclusive collection releases.
           </p>
           <form className="mt-4 flex items-center border-b border-white/15 pb-3 focus-within:border-white/60 transition-colors group">
@@ -86,7 +86,7 @@ export default function Footer() {
               placeholder="Email Address" 
               className="bg-transparent text-[0.85rem] text-white placeholder-white/30 focus:outline-none w-full"
             />
-            <button type="button" className="text-[0.55rem] uppercase tracking-[0.2em] text-white/50 group-hover:text-white transition-colors ml-4 flex items-center gap-2">
+            <button type="button" className="text-[0.55rem] uppercase tracking-[0.2em] text-white/90 group-hover:text-white transition-colors ml-4 flex items-center gap-2">
               Join
             </button>
           </form>
@@ -102,12 +102,12 @@ export default function Footer() {
         transition={{ duration: 1.2, delay: 0.5 }}
         className="relative z-10 max-w-[1400px] mx-auto mt-32 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6"
       >
-        <p className="text-[0.65rem] text-white/30 uppercase tracking-[0.2em]">
+        <p className="text-[0.65rem] text-white/90 uppercase tracking-[0.2em]">
           &copy; {new Date().getFullYear()} Tryb Fusyon. All Rights Reserved.
         </p>
         <div className="flex items-center gap-8">
           {["Instagram", "Twitter", "Pinterest"].map((social) => (
-            <a key={social} href="#" className="text-[0.65rem] uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors">
+            <a key={social} href="#" className="text-[0.65rem] uppercase tracking-[0.2em] text-white/90 hover:text-white transition-colors">
               {social}
             </a>
           ))}

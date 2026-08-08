@@ -28,15 +28,15 @@ export default function BespokeContact() {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
               <div className="w-8 h-px bg-white/30" />
-              <span className="text-[0.55rem] uppercase tracking-[0.4em] text-white/50 font-sans">
+              <span className="text-[0.55rem] uppercase tracking-[0.4em] text-white/90 font-sans">
                 Atelier Services
               </span>
             </div>
             <h2 className="font-serif font-light text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-[-0.02em]">
               Commission <br />
-              <span className="italic text-white/40">the</span> Extraordinary.
+              <span className="italic text-white/90">the</span> Extraordinary.
             </h2>
-            <p className="max-w-md text-[0.95rem] md:text-[1.05rem] text-white/50 font-sans font-light leading-[1.8] mt-2">
+            <p className="max-w-md text-[0.95rem] md:text-[1.05rem] text-white/90 font-sans font-light leading-[1.8] mt-2">
               True luxury is tailored to the individual. Our bespoke service offers an intimate collaboration to create a Tryb Fusyon piece exclusively for you—from initial sketch to final fitting.
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function BespokeContact() {
                   />
                   <label
                     htmlFor="name"
-                    className="absolute left-0 top-0 text-white/30 text-[0.65rem] uppercase tracking-[0.2em] transform -translate-y-5 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-[0.8rem] peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal transition-all duration-300 pointer-events-none"
+                    className="absolute left-0 top-0 text-white/90 text-[0.65rem] uppercase tracking-[0.2em] transform -translate-y-5 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-[0.8rem] peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal transition-all duration-300 pointer-events-none"
                   >
                     Full Name
                   </label>
@@ -94,7 +94,7 @@ export default function BespokeContact() {
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-0 top-0 text-white/30 text-[0.65rem] uppercase tracking-[0.2em] transform -translate-y-5 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-[0.8rem] peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal transition-all duration-300 pointer-events-none"
+                    className="absolute left-0 top-0 text-white/90 text-[0.65rem] uppercase tracking-[0.2em] transform -translate-y-5 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-[0.8rem] peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal transition-all duration-300 pointer-events-none"
                   >
                     Email Address
                   </label>
@@ -110,7 +110,7 @@ export default function BespokeContact() {
                 />
                 <label
                   htmlFor="location"
-                  className="absolute left-0 top-0 text-white/30 text-[0.65rem] uppercase tracking-[0.2em] transform -translate-y-5 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-[0.8rem] peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal transition-all duration-300 pointer-events-none"
+                  className="absolute left-0 top-0 text-white/90 text-[0.65rem] uppercase tracking-[0.2em] transform -translate-y-5 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-[0.8rem] peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal transition-all duration-300 pointer-events-none"
                 >
                   City / Country
                 </label>
@@ -125,7 +125,7 @@ export default function BespokeContact() {
                 ></textarea>
                 <label
                   htmlFor="details"
-                  className="absolute left-0 top-0 text-white/30 text-[0.65rem] uppercase tracking-[0.2em] transform -translate-y-5 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-[0.8rem] peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal transition-all duration-300 pointer-events-none"
+                  className="absolute left-0 top-0 text-white/90 text-[0.65rem] uppercase tracking-[0.2em] transform -translate-y-5 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-[0.8rem] peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal transition-all duration-300 pointer-events-none"
                 >
                   Project Details or Inquiry
                 </label>
